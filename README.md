@@ -9,6 +9,7 @@ Current commands
   - Copy import statement for current file("from dotted.file.name.from.root import "). Highlight something to specifically import it.
   - Copy dotted path for current file.
   - Copy path for js-tester(Mocha utility) of current js file
+  - Open list of files from clipboard
 
 Installation
 

@@ -3,6 +3,12 @@ import re
 
 import sublime, sublime_plugin
 
+class Open_clipboard(sublime_plugin.TextCommand):
+    def run(self, edit):
+        files = sublime.get_clipboard().split('\n')
+        for f in files:
+            sublime.active_window().open_file(os.path.join(sublime.active_window().folders()[0], f))
+
 class PathToClipboardCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         sublime.set_clipboard(root_file_path())
