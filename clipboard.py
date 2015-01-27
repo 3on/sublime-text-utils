@@ -3,6 +3,15 @@ import re
 
 import sublime, sublime_plugin
 
+
+class Copy_opengrock(sublime_plugin.TextCommand):
+    def run(self, edit):
+        filename = root_file_path()
+        (line, col) = self.view.rowcol(self.view.sel()[0].begin())
+        # hardcoded for yelp-main only for now :/
+        url = 'https://opengrok.yelpcorp.com/xref/yelp-main/{0}#{1}'.format(filename, line)
+        sublime.set_clipboard(url)
+
 class PathToClipboardCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         sublime.set_clipboard(root_file_path())
